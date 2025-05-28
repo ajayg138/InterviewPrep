@@ -11,7 +11,7 @@ public class SwitchSt {
                 break;
             case 3:
                 System.out.println("switch 3...");
-                break;
+
             case 4:
                 System.out.println("switch 4...");
                 break;
@@ -27,6 +27,16 @@ public class SwitchSt {
     }
 
     public static void main(String[] args) {
-    switchEg(99);
+    switchEg(3);
+//    for(int i=0;;i++){
+//        System.out.println(i);
+//    }
+
+        for(int i=1;i<=10;i++){
+            if(i%2==0){
+                continue;
+            }
+            System.out.println(i);
+        }
     }
 }
