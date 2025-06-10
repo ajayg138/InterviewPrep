@@ -19,7 +19,8 @@ public class AllDivisor {
     public static void divisor(int n){
         List<Integer> div=new ArrayList<>();
 
-        for(int i=1;i<=Math.sqrt(n);i++){
+//        for(int i=1;i<=Math.sqrt(n);i++){
+        for(int i=1;i*i<=n;i++){
             if(n%i==0){
                 div.add(i);
                 if(n/i != i){
