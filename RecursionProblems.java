@@ -41,6 +41,39 @@ public class RecursionProblems {
 
     }
 
+    public static int sumOfN(int n){
+        if(n==0){
+            return 0;
+        }
+        return n + sumOfN(n-1);
+
+    }
+
+    public static void paraSum(int i,int sum){
+        if(i<1){
+            System.out.print(sum);
+            return;
+        }
+
+        paraSum(i-1,sum+i);
+    }
+
+    public static int factorialN(int n){
+        if(n==0){
+            return 1;
+        }
+        return n * factorialN(n-1);
+    }
+
+    public static void factNPara(int i,int fact){
+        if(i<1){
+            System.out.print(fact);
+            return;
+        }
+
+        factNPara(i-1,fact*i);
+    }
+
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -52,6 +85,10 @@ public class RecursionProblems {
 //        printNumBackTracking(n,n);
 //        printNumBackTrackingRev(1,n);
 
+//        System.out.println("sum is: "+sumOfN(n));
+//        paraSum(n,0);
+//        System.out.println("Factorial of "+n+" is: "+factorialN(n));
+        factNPara(n,1);
         //checking
 //        String s1=new String("Durga");
 //        String s2=new String("Software");
