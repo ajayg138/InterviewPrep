@@ -74,11 +74,25 @@ public class RecursionProblems {
         factNPara(i-1,fact*i);
     }
 
+    public static void swapArr(int[] arr,int l,int r){
+        if(l>=r){
+            return;
+        }
+        int temp =arr[l];
+        arr[l]=arr[r];
+        arr[r]=temp;
+
+
+        swapArr(arr,l+1,r-1);
+    }
+
+
+
 
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter n: ");
-        int n=sc.nextInt();
+//        Scanner sc=new Scanner(System.in);
+//        System.out.print("Enter n: ");
+//        int n=sc.nextInt();
 //        printName(n);
 //        printNum(1,n);
 //        printNumRev(n);
@@ -88,7 +102,20 @@ public class RecursionProblems {
 //        System.out.println("sum is: "+sumOfN(n));
 //        paraSum(n,0);
 //        System.out.println("Factorial of "+n+" is: "+factorialN(n));
-        factNPara(n,1);
+//        factNPara(n,1);
+
+        int[] arr={1,2,3,4,5,6,7};
+        int len=arr.length-1;
+        swapArr(arr,0,len);
+
+        for(int ele:arr){
+            System.out.print(ele+", ");
+        }
+
+
+
+
+
         //checking
 //        String s1=new String("Durga");
 //        String s2=new String("Software");
