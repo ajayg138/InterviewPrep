@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class digitsInWords {
@@ -44,12 +46,34 @@ public class digitsInWords {
         }
     }
 
+    //using HashMap
+
+    public static void print(String N){
+        Map<Character, String> digits = new HashMap<Character, String>(){{
+           put('1',"One");
+           put('2',"Two");
+            put('3',"Three");
+            put('4',"Four");
+            put('5',"Five");
+            put('6',"Six");
+            put('7',"Seven");
+            put('8',"Eight");
+            put('9',"Nine");
+        }};
+
+        for(char number:N.toCharArray()){
+            System.out.print(digits.get(number)+" ");
+        }
+
+    }
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter N: ");
         String N=sc.nextLine();
 
-        printWords(N);
+//        printWords(N);
+        print(N);
 
     }
 }
