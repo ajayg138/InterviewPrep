@@ -14,6 +14,7 @@ public class RotateArrByDPlaces {
 //        }
 
         //brute force...
+        Nplaces =Nplaces%arr.length;   //Very Imp
         int[] temp=new int[Nplaces];
         for(int i=0;i<Nplaces;i++){
             temp[i]=arr[i];
@@ -24,10 +25,13 @@ public class RotateArrByDPlaces {
         }
 
 
-        int j=0;
+//        int j=0;
+//        for(int i=arr.length-Nplaces;i<arr.length;i++){
+//            arr[i]=temp[j];
+//            j++;
+//        }
         for(int i=arr.length-Nplaces;i<arr.length;i++){
-            arr[i]=temp[j];
-            j++;
+            arr[i]=temp[i-(arr.length-Nplaces)];
         }
 
         //printing Array
@@ -38,7 +42,7 @@ public class RotateArrByDPlaces {
 
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5,6,7};
-        int Nplaces=3;
+        int Nplaces=8;
 
         rotateArr(arr,Nplaces);
     }
