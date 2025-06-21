@@ -44,7 +44,7 @@ public class RotateArrByD {
         }
     }
 
-    public static void rotateArr(int[] arr,int d){
+    public static void rotateArrToLeft(int[] arr,int d){
         int n=arr.length;
         d=d%n;
 
@@ -62,11 +62,35 @@ public class RotateArrByD {
         }
     }
 
+
+    public static void rotateArrToRight(int[] arr,int d){
+        int n=arr.length;
+        d=d%n;
+        reverse(arr,n-d,n-1);
+
+        reverse(arr,0,n-d-1);
+
+        reverse(arr,0,n-1);
+
+        for(int i:arr){
+            System.out.print(i+" ");
+        }
+    }
+
     public static void main(String[] args) {
-        int[] arr={1,2,3,4,5,6,7,8};
+        int[] arr1={1,2,3,4,5,6,7,8};
+        int[] arr2={1,2,3,4,5,6,7,8};
         int d=3;
 
-        rotateArr(arr,d);
+        System.out.print("Original Array: ");
+        for(int num:arr1){
+            System.out.print(num+" ");
+        }
+        System.out.println();
+
+        rotateArrToLeft(arr1,d);
+        System.out.println();
+        rotateArrToRight(arr2,d);
 
     }
 }
