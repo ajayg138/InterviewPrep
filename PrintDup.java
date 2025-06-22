@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class PrintDup {
@@ -36,12 +37,36 @@ public class PrintDup {
         return res;
     }
 
+    //using HashSet
+
+    public static ArrayList<Integer> getDup(int[] arr){
+        HashSet<Integer> set=new HashSet<>();
+        boolean isDuplicate=false;
+        ArrayList<Integer> res=new ArrayList<>();
+
+        for(int i=0;i<arr.length;i++){
+            if(set.contains(arr[i])){
+                isDuplicate=true;
+                res.add(arr[i]);
+            }else{
+                set.add(arr[i]);
+            }
+        }
+//        if(!isDuplicate){
+//            System.out.print(-1);
+//        }
+        return res;
+
+    }
+
     public static void main(String[] args) {
-        int[] arr={1,5,4,2,1,4,7,7};
+        int[] arr={1,5,4,2,7,};
 
         System.out.print(giveDuplicates(arr));
         System.out.println();
         System.out.print(returnDuplicates(arr));;
+        System.out.println();
+        System.out.print(getDup(arr));
 
     }
 }
