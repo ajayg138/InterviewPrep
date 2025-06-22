@@ -12,7 +12,7 @@ public class DeleteEleArray {
 //        int[] newArr=new int[arr.length-1];
 
 
-        for(int i=0,j=0;i<arr.length;i++,j++){
+        for(int i=0;i<arr.length;i++){
             if(i != pos){
                 newArr.add(arr[i]);
             }
@@ -23,7 +23,7 @@ public class DeleteEleArray {
 
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5};
-        int pos=5;
+        int pos=0;
 
         System.out.println(deletedArr(arr,pos));
 
