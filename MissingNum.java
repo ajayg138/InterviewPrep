@@ -64,6 +64,24 @@ public class MissingNum {
 
         System.out.print("Missing No.: "+(sum-dumSum));
     }
+    public static int findMissingNumber(int[] arr) {
+        int n = arr.length;
+        int xorArray = 0;
+        int xorFull = 0;
+
+        // XOR all elements in the array
+        for (int i = 0; i < n; i++) {
+            xorArray ^= arr[i];
+        }
+
+        // XOR all numbers from 1 to n+1
+        for (int i = 1; i <= n + 1; i++) {
+            xorFull ^= i;
+        }
+
+        // XOR of both gives the missing number
+        return xorArray ^ xorFull;
+    }
 
     public static void main(String[] args) {
         int[] arr={1,2,4,5,3};
@@ -75,6 +93,8 @@ public class MissingNum {
         giveMissing(arr,n);
         System.out.println();
         returnMissing(arr,n);
+        System.out.println();
+        System.out.println("Missing number is: " + findMissingNumber(arr));
 
     }
 }
