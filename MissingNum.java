@@ -96,5 +96,6 @@ public class MissingNum {
         System.out.println();
         System.out.println("Missing number is: " + findMissingNumber(arr));
 
+
     }
 }
