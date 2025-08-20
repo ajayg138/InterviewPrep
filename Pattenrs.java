@@ -29,12 +29,32 @@ public class Pattenrs {
         }
     }
 
+    public static void pattern4(int n){
+        for(int i=0;i<n;i++){
+            for(int j=n;j>i;j--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern5(int n){
+        for(int i=0;i<n;i++){
+            for(int j=n;j>i;j--){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter n: ");
         int n=sc.nextInt();
 //        pattern1(n);
 //        pattern2(n);
-        pattern3(n);
+//        pattern3(n);
+//        pattern4(n);
+        pattern5(n);
     }
 }
